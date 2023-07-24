@@ -8,7 +8,16 @@ export const FormPhone =({onAddContact})=> {
 
  const handleChange = e => {
     const { name, value } = e.target;
-    setName({ [name]: value });
+     switch (name) {
+       case 'name':
+         setName(value);
+         break;
+       case 'number':
+         setNumber(value);
+         break;
+       default:
+         return;
+     }
   };
 
 const handleSubmit = e => {
